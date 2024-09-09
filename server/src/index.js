@@ -1,6 +1,5 @@
 const express = require("express");
 const cors = require("cors");
-const helmet = require("helmet");
 const compression = require("compression");
 const cloudinary = require("cloudinary");
 const { PORT, CLOUD_NAME, API_KEY, API_SECRET } = require("./config/index.js");
@@ -29,22 +28,6 @@ const corsOptions = {
 app.use(cors(corsOptions));
 app.use(express.json({ extended: true, limit: "10mb" }));
 app.use(express.urlencoded({ extended: true }));
-
-app.use(
-  helmet.contentSecurityPolicy({
-    directives: {
-      defaultSrc: ["'self'"],
-      scriptSrc: ["'self'"],
-      imgSrc: ["'self'", "data:", "https://res.cloudinary.com"],
-      styleSrc: ["'self'"],
-      fontSrc: ["'self'"],
-      connectSrc: ["'self'"],
-      objectSrc: ["'none'"],
-      faviconSrc: ["'self'", "https://reviews-five-sigma.vercel.app"],
-      upgradeInsecureRequests: [],
-    },
-  })
-);
 
 app.use("/api/v1", cors(), publicRouter);
 app.use("/api/v1", userRouter);
