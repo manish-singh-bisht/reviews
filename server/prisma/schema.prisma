@@ -1,0 +1,51 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            String  @id @default(uuid())
+  email         String  @unique
+  password_hash String
+  apiKey        String  @unique
+  spaces        Space[]
+
+  @@index([email])
+}
+
+model Space {
+  id                String   @id @default(uuid())
+  name              String   @unique
+  user              User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId            String
+  headerTitle       String
+  logo              Json
+  customMessage     String
+  questions         String[]
+  customButtonColor String
+  theme             String   @default("light")
+  thankYouPage      Json
+  reviews           Review[]
+  createdAt         DateTime @default(now())
+
+  @@index([name])
+  @@index([userId])
+}
+
+model Review {
+  id         String   @id @default(uuid())
+  rating     Int
+  name       String
+  email      String
+  reviewMsg  String
+  isAmongTop Boolean  @default(false)
+  createdAt  DateTime @default(now())
+  space      Space    @relation(fields: [spaceId], references: [id], onDelete: Cascade)
+  spaceId    String
+
+  @@index([spaceId])
+}
