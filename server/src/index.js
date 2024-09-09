@@ -39,7 +39,7 @@ const restrictedCorsOptions = {
 const publicCorsOptions = {
   origin: "*",
   methods: ["GET", "OPTIONS"],
-  allowedHeaders: ["Content-Type", "x-api-key", "email"],
+  allowedHeaders: "*",
   maxAge: 86400,
 };
 
