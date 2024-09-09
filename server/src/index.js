@@ -19,8 +19,8 @@ cloudinary.config({
 
 const corsOptions = {
   origin: [
-    "https://review-widget-mauve.vercel.app",
     "https://reviews-five-sigma.vercel.app",
+    "https://review-widget-mauve.vercel.app",
   ],
   credentials: true,
 };
@@ -29,10 +29,10 @@ app.use(cors(corsOptions));
 app.use(express.json({ extended: true, limit: "10mb" }));
 app.use(express.urlencoded({ extended: true }));
 
-app.use("/api/v1", cors(), publicRouter);
 app.use("/api/v1", userRouter);
 app.use("/api/v1", spaceRouter);
 app.use("/api/v1", reviewRouter);
+app.use("/api/v1", cors(), publicRouter);
 
 let server;
 
