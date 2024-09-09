@@ -46,11 +46,10 @@ const publicCorsOptions = {
 app.use(express.json({ extended: true, limit: "10mb" }));
 app.use(express.urlencoded({ extended: true }));
 
+app.use("/api/v1/p", cors(publicCorsOptions), publicRouter);
 app.use("/api/v1", cors(restrictedCorsOptions), userRouter);
 app.use("/api/v1", cors(restrictedCorsOptions), spaceRouter);
 app.use("/api/v1", cors(restrictedCorsOptions), reviewRouter);
-
-app.use("/api/v1", cors(publicCorsOptions), publicRouter);
 
 let server;
 
