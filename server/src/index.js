@@ -25,14 +25,32 @@ const corsOptions = {
   credentials: true,
 };
 
-app.use(cors(corsOptions));
+const restrictedCorsOptions = {
+  origin: [
+    "https://reviews-five-sigma.vercel.app",
+    "https://review-widget-mauve.vercel.app",
+  ],
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+  credentials: true,
+  maxAge: 86400,
+};
+
+const publicCorsOptions = {
+  origin: "*",
+  methods: ["GET", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "x-api-key", "email"],
+  maxAge: 86400,
+};
+
 app.use(express.json({ extended: true, limit: "10mb" }));
 app.use(express.urlencoded({ extended: true }));
 
-app.use("/api/v1", userRouter);
-app.use("/api/v1", spaceRouter);
-app.use("/api/v1", reviewRouter);
-app.use("/api/v1", cors(), publicRouter);
+app.use("/api/v1", cors(restrictedCorsOptions), userRouter);
+app.use("/api/v1", cors(restrictedCorsOptions), spaceRouter);
+app.use("/api/v1", cors(restrictedCorsOptions), reviewRouter);
+
+app.use("/api/v1", cors(publicCorsOptions), publicRouter);
 
 let server;
 
