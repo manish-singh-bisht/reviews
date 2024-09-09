@@ -40,7 +40,7 @@ app.use(
       fontSrc: ["'self'"],
       connectSrc: ["'self'"],
       objectSrc: ["'none'"],
-      faviconSrc: ["'self'", "https://reviews-742v.onrender.com"],
+      faviconSrc: ["'self'", "https://reviews-five-sigma.vercel.app"],
       upgradeInsecureRequests: [],
     },
   })

@@ -562,7 +562,7 @@ const SpaceForm = ({
                   isLoading={isLoading}
                 />
                 <span className="text-sm text-gray-500 p-1">
-                  Public URL is: https://reviews-742v.onrender.com/
+                  Public URL is: https://reviews-five-sigma.vercel.app/
                   {spaceData.name ? formattedUrl : "your-space"}
                 </span>
               </div>

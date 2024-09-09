@@ -162,12 +162,12 @@ const IndividualSpace = () => {
               <div className="text-slate-400">
                 Space public url:
                 <a
-                  href={`https://reviews-742v.onrender.com/${spaceData.name}`}
+                  href={`https://reviews-five-sigma.vercel.app/${spaceData.name}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-main underline"
                 >
-                  {`https://reviews-742v.onrender.com/${spaceData.name}`}
+                  {`https://reviews-five-sigma.vercel.app/${spaceData.name}`}
                 </a>
               </div>
             </div>

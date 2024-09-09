@@ -66,7 +66,7 @@ const Header = () => {
     <div className="w-full h-20 flex items-center  justify-between">
       <img src={reviews} alt="logo" height={100} width={100} />
       {!token ||
-      window.location.href === "https://reviews-742v.onrender.com/" ? (
+      window.location.href === "https://reviews-five-sigma.vercel.app/" ? (
         <div className="flex items-center gap-2">
           <Button
             onClick={handleGenerateCredentials}
