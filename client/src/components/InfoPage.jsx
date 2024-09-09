@@ -69,7 +69,7 @@ const InfoPage = () => {
       }
 
       const response = await axios.get(url.toString(), {
-        withCredentials: true,
+        // withCredentials: true,
         headers: {
           "x-api-key": userApiKey,
           email: email,
