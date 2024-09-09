@@ -62,7 +62,7 @@ const InfoPage = () => {
     try {
       setOutput("Loading...");
 
-      const url = new URL(`${API_BASE_URL}/spaces/${spaceName}/reviews`);
+      const url = new URL(`${API_BASE_URL}/p/spaces/${spaceName}/reviews`);
       if (query) {
         const params = new URLSearchParams(query);
         url.search = params.toString();
