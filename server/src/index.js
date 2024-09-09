@@ -21,7 +21,7 @@ cloudinary.config({
 const corsOptions = {
   origin: [
     "https://review-widget-mauve.vercel.app",
-    "https://reviews-742v.onrender.com",
+    "https://reviews-five-sigma.vercel.app",
   ],
   credentials: true,
 };
