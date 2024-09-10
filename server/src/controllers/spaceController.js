@@ -19,7 +19,6 @@ exports.addSpace = async (req, res) => {
 
     const existingSpace = await prisma.space.findFirst({
       where: {
-        userId: userId,
         name: data.name,
       },
     });
