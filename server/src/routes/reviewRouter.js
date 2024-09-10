@@ -5,11 +5,13 @@ const {
   createReviewValidationSchema,
   updateReviewValidationSchema,
   spaceIdValidationSchema,
+  spaceNameValidationSchema,
 } = require("../utils/validations");
 const {
   createReview,
   editReview,
   getAllReviews,
+  getAllReviewsWhenRequestedByUser,
 } = require("../controllers/reviewController");
 const { validateApiKey } = require("../middlewares/apiKeyValidation");
 
@@ -32,6 +34,13 @@ router.get(
   isAuthenticated,
   checkSchema(spaceIdValidationSchema),
   getAllReviews
+);
+
+router.get(
+  "/spaces/:name/reviews", //space name
+  validateApiKey,
+  checkSchema(spaceNameValidationSchema),
+  getAllReviewsWhenRequestedByUser
 );
 
 module.exports = router;

@@ -50,7 +50,7 @@ app.use("/api/v1", cors(restrictedCorsOptions), userRouter);
 app.use("/api/v1", cors(restrictedCorsOptions), spaceRouter);
 app.use("/api/v1", cors(restrictedCorsOptions), reviewRouter);
 
-app.use("/api/v1", cors(publicCorsOptions), publicRouter);
+app.use("/api/v1/p", cors(publicCorsOptions), publicRouter);
 
 let server;
 

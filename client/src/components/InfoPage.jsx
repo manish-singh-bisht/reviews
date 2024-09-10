@@ -159,7 +159,7 @@ const InfoPage = () => {
             To fetch reviews, use the following curl command:
           </p>
           <code className="block bg-gray-200 p-4 rounded mb-4 whitespace-pre-wrap text-sm">
-            {`curl -X GET "https://reviews-k6jx.onrender.com/api/v1${baseEndpoint}" \\
+            {`curl -X GET "https://reviews-k6jx.onrender.com/api/v1/p${baseEndpoint}" \\
   -H "x-api-key: YOUR_API_KEY" \\
   -H "email: YOUR_EMAIL"`}
           </code>
