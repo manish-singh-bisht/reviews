@@ -31,7 +31,7 @@ const restrictedCorsOptions = {
     "https://review-widget-mauve.vercel.app",
   ],
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-  allowedHeaders: ["Content-Type", "Authorization"],
+  allowedHeaders: ["Content-Type", "Authorization", "x-api-key", "email"],
   credentials: true,
   maxAge: 86400,
 };
