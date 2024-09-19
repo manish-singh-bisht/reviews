@@ -174,7 +174,10 @@ const SignInLogIn = ({
                 ? "Sign in"
                 : "Log in"}
             </Button>
-          </DialogFooter>
+          </DialogFooter>  <div className="text-red-500 font-bold underline">
+            It may take approximately 60 seconds to run the first time due to
+            being hosted on a free tier. Thank you for your patience!
+          </div>
         </form>
       </DialogContent>
     </Dialog>
