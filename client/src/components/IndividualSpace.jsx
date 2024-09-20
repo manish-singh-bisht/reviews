@@ -151,7 +151,7 @@ const IndividualSpace = () => {
         <div className="border-t border-gray-300 border-b mt-5 flex py-6 justify-between">
           <div className="flex gap-5 items-center">
             <img
-              src={spaceData.logo.url}
+              src={spaceData?.logo?.url}
               alt=""
               height={100}
               width={100}
